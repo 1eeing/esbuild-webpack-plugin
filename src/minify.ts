@@ -27,7 +27,7 @@ export const minify = async ({
   return { code: code.js || code.css || '', error };
 }
 
-export const transfrom = async (task: Task) => {
+export const transform = async (task: Task) => {
   task = new Function(
     'exports',
     'require',

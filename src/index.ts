@@ -20,6 +20,33 @@ const getAvailableNumberOfCores = (parallel: boolean | number) => {
     : Math.min(Number(parallel) || 0, cpus.length - 1);
 }
 
+const buildError = (error, file) => {
+  if (error.line) {
+    return new Error(
+      `${file} from ESBuild\n${error.message} [${file}:${error.line},${
+        error.col
+      }]${
+        error.stack ? `\n${error.stack.split('\n').slice(1).join('\n')}` : ''
+      }`
+    );
+  }
+
+  if (error.stack) {
+    return new Error(`${file} from ESBuild\n${error.stack}`);
+  }
+
+  return new Error(`${file} from ESBuild\n${error.message}`);
+}
+
+const buildWarning = (
+  warning,
+) => {
+  let warningMessage = warning;
+  let locationMessage = '';
+
+  return `ESBuild Plugin: ${warningMessage}${locationMessage}`;
+}
+
 export default class ESBuildPlugin {
   private cache: any
   private options: Options
@@ -79,10 +106,16 @@ export default class ESBuildPlugin {
 
     const callback = (taskResult) => {
       let { code } = taskResult;
-      const { error } = taskResult;
-      const { extractedComments } = taskResult;
+      const { error, warnings, extractedComments } = taskResult;
 
       if (error) {
+        compilation.errors.push(
+          buildError(
+            error,
+            file,
+          )
+        );
+
         return;
       }
 
@@ -104,6 +137,18 @@ export default class ESBuildPlugin {
 
       // Updating assets
       compilation.assets[file] = outputSource;
+
+      if (warnings && warnings.length > 0) {
+        warnings.forEach((warning) => {
+          const builtWarning = buildWarning(
+            warning,
+          );
+
+          if (builtWarning) {
+            compilation.warnings.push(builtWarning);
+          }
+        });
+      }
     };
 
     const task: Task = {

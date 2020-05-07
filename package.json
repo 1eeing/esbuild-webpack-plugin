@@ -1,8 +1,19 @@
 {
   "name": "esbuild-webpack-plugin",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1-alpha.1",
+  "description": "Esbuild plugin for webpack",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "esbuild",
+    "webpack",
+    "webpack-plugin",
+    "esbuild-webpack-plugin"
+  ],
   "scripts": {
     "build": "rm -rf ./dist && npx tsc"
   },
@@ -10,7 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/1eeing/esbuild-webpack-plugin.git"
   },
-  "author": "",
+  "author": "1eeing <372711472@qq.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/1eeing/esbuild-webpack-plugin/issues"

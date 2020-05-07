@@ -1,5 +1,5 @@
 {
-  "name": "esbuild-webpack-plugin",
+  "name": "esbuild-minimizer-webpack-plugin",
   "version": "0.0.1-alpha.1",
   "description": "Esbuild plugin for webpack",
   "main": "dist/src/index.js",
@@ -12,21 +12,22 @@
     "esbuild",
     "webpack",
     "webpack-plugin",
-    "esbuild-webpack-plugin"
+    "esbuild-webpack-plugin",
+    "esbuild-minimizer-webpack-plugin"
   ],
   "scripts": {
     "build": "rm -rf ./dist && npx tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/1eeing/esbuild-webpack-plugin.git"
+    "url": "git+https://github.com/1eeing/esbuild-minimizer-webpack-plugin.git"
   },
   "author": "1eeing <372711472@qq.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/1eeing/esbuild-webpack-plugin/issues"
+    "url": "https://github.com/1eeing/esbuild-minimizer-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/1eeing/esbuild-webpack-plugin#readme",
+  "homepage": "https://github.com/1eeing/esbuild-minimizer-webpack-plugin#readme",
   "peerDependencies": {
     "webpack": "^4.0.0"
   },

@@ -15,7 +15,7 @@ export default class Webpack4Cache {
   }
 
   static getCacheDirectory() {
-    return findCacheDir({ name: 'esbuild-webpack-plugin' }) || os.tmpdir();
+    return findCacheDir({ name: 'esbuild-minimizer-webpack-plugin' }) || os.tmpdir();
   }
 
   isEnabled() {

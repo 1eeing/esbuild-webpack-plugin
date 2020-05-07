@@ -294,7 +294,7 @@ export default class ESBuildPlugin {
     compiler.hooks.afterEmit.tapPromise(plugin, async () => {
       const service = await ensureService();
       if (service) {
-        service.stop();
+        await service.stop();
       }
     });
   }

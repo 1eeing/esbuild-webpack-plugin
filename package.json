@@ -1,0 +1,40 @@
+{
+  "name": "esbuild-webpack-plugin",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf ./dist && npx tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1eeing/esbuild-webpack-plugin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1eeing/esbuild-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/1eeing/esbuild-webpack-plugin#readme",
+  "peerDependencies": {
+    "webpack": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/cacache": "^12.0.1",
+    "@types/find-cache-dir": "^3.2.0",
+    "@types/node": "^13.13.5",
+    "@types/serialize-javascript": "^1.5.0",
+    "@types/webpack": "^4.41.12",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0"
+  },
+  "dependencies": {
+    "cacache": "^15.0.3",
+    "esbuild": "^0.2.6",
+    "find-cache-dir": "^3.3.1",
+    "jest-worker": "^26.0.0",
+    "p-limit": "^2.3.0",
+    "serialize-javascript": "^3.0.0",
+    "webpack-sources": "^1.4.3"
+  }
+}

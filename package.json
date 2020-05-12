@@ -1,6 +1,6 @@
 {
   "name": "esbuild-minimizer-webpack-plugin",
-  "version": "0.0.1-alpha.2",
+  "version": "1.0.0-beta.1",
   "description": "Esbuild plugin for webpack",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
